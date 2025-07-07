@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>My Rummikub Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans p-6 text-center">
+
+    <h1 class="text-3xl font-bold mb-6">My Rummikub Game</h1>
+    <div class="mb-6">
+        <label for="playerCount" class="block text-lg font-medium mb-2">Enter number of players:</label>
+        <input type="number" id="playerCount" min="1" max="4" placeholder="e.g. 2"
+            class="border border-gray-400 px-3 py-2 rounded w-32 text-center" />
+        <button onclick="startGame()"
+            class="ml-4 bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded shadow">
+            Start Game
+        </button>
+    </div>
+    <!-- Board Section -->
+    <div id="board" class="bg-white border border-gray-400 p-4 min-h-[150px] mb-8 shadow rounded-lg">
+        <h3 class="text-lg font-semibold mb-2">Board</h3>
+        <!-- Tiles will be appended here -->
+    </div>
+
+    <!-- Area for current player -->
+    <h2 id="turnIndicator" class="text-xl font-semibold mb-4 hidden"></h2>
+    <div id="playerArea" class="mb-6"></div>
+    <div id="actionButtons" class="space-x-4 mb-6 hidden">
+        <button onclick="drawTileForCurrentPlayer()"
+            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow">
+            Draw Tile
+        </button>
+        <button onclick="organizeByRunsForCurrentPlayer()"
+            class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded shadow">
+            789
+        </button>
+        <button onclick="organizeBySetsForCurrentPlayer()"
+            class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded shadow">
+            777
+        </button>
+        <button onclick="submitMove()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded shadow">
+            Submit Move
+        </button>
+    </div>
+    <!-- Button to go to next player -->
+    <button id="nextPlayerBtn" onclick="nextPlayer()"
+        class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded shadow hidden">
+        Next Player
+    </button>
+
+    <script src="Tiles.js">
+    </script>
+
+</body>
+
+</html>
